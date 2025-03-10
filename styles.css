@@ -3,7 +3,127 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #add8e6;
 }
+
 .aftermath {
   display: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align items in nav */
+}
+
+#playa {
+  padding-left: 1rem; /* Use padding instead of position for responsiveness */
+}
+
+#comp {
+  padding-right: 1rem; /* Use padding instead of position for responsiveness */
+}
+
+#description {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 10%;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  width: 60vw;
+  position: relative;
+  top: 6em;
+  margin: 0 auto;
+  outline: #a6acb9 solid 4px;
+}
+
+i {
+  font-size: 3em;
+  display: block;
+  margin: 0 auto;
+}
+
+.moves {
+  display: flex;
+  height: 50%;
+  width: 30%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.moves button {
+  background: #add8e6;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw; /* Increase width on smaller screens */
+    height: 80vh; /* Increase height for better spacing */
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    top: 3em; /* Adjust top position */
+  }
+
+  .moves {
+    width: 80%; /* Increase width for better spacing */
+    height: auto; /* Adjust height based on content */
+    margin: 10px auto; /* Add margin for spacing */
+  }
+
+  i {
+    font-size: 2.5em; /* Slightly reduce icon size on smaller screens */
+  }
+
+  .moves button {
+    font-size: 1.2em; /* Slightly reduce button font size */
+    padding: 8px 16px; /* Slightly reduce button padding */
+  }
+
+  #description {
+    top: 1em; /* Adjust description position */
+  }
+
+  nav {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+  }
+  #playa,
+  #comp {
+    padding: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  i {
+    font-size: 2em; /* Further reduce icon size on very small screens */
+  }
+
+  .moves button {
+    font-size: 1em; /* Further reduce button font size */
+  }
 }
