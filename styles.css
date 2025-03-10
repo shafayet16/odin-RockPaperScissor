@@ -50,7 +50,7 @@ nav {
   outline: #a6acb9 solid 4px;
 }
 i {
-  font-size: 3em;
+  font-size: 5em;
   display: block;
   margin: 0 auto;
 }
@@ -70,5 +70,31 @@ i {
     font-size: 1.5em;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    left: 6px;
   }
+}
+.hidden {
+  display: none;
+}
+.aftermath h3 {
+  position: relative;
+  top: -3rem;
+  font-size: 2rem;
+  background: linear-gradient(to right, #0ce2d7, #353dad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.aftermath button {
+  background: transparent;
+  color: #e5dffc;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #0ce2d7, #353dad) 1;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  left: 5px;
 }

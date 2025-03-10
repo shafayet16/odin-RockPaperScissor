@@ -5,7 +5,7 @@ let computerPointValue = 0;
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissor = document.getElementById("scissor");
-let CompSpan = document.querySelector(".aftermath span"); //select the span inside the aftermath div.
+let CompSpan = document.querySelector(".aftermath span");
 let resultDisplay = document.getElementById("result");
 let playAgainButton = document.querySelector(".aftermath button");
 let playerChoice = "";
@@ -44,15 +44,38 @@ function playGame(computer, player) {
   aftermath.style.top = "50%";
   aftermath.style.left = "50%";
   aftermath.style.transform = "translate(-50%, -50%)";
-  aftermath.style.width = "80%";
+  aftermath.style.width = "96%";
+  aftermath.style.height = "92%";
   aftermath.style.padding = "20px";
-  aftermath.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  aftermath.style.background = "linear-gradient(to bottom, #282c6b, #000000)";
   aftermath.style.borderRadius = "10px";
-  aftermath.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.5)";
+  aftermath.style.boxShadow = "0 4px 8px rgba(127, 19, 189, 0.5)";
   aftermath.style.color = "#add8e6";
   aftermath.style.fontSize = "1.5em";
   aftermath.style.textAlign = "center";
-  moves.style.display = "none";
+  moves.forEach((move) => {
+    move.style.display = "none";
+  });
+  playAgainButton.style.display = "block";
+  if (playerPointValue === 5) {
+    aftermath.style.background =
+      "linear-gradient(to bottom,rgb(255, 255, 255),rgb(255, 255, 255))";
+    playAgainButton.style.color = "lime"; // Corrected line
+    resultDisplay.textContent = "Won The Game!";
+    playerPointValue = 0;
+    computerPointValue = 0;
+    playerPoint.textContent = playerPointValue;
+    computerPoint.textContent = computerPointValue;
+  } else if (computerPointValue === 5) {
+    resultDisplay.textContent = "Lost The Game!";
+    aftermath.style.background =
+      "linear-gradient(to bottom,rgb(0, 0, 0), #000000)";
+    playAgainButton.style.color = "Red"; // Corrected line
+    playerPointValue = 0;
+    computerPointValue = 0;
+    playerPoint.textContent = playerPointValue;
+    computerPoint.textContent = computerPointValue;
+  }
 }
 
 rock.addEventListener("click", function () {
@@ -72,6 +95,9 @@ scissor.addEventListener("click", function () {
 
 playAgainButton.addEventListener("click", function () {
   aftermath.style.display = "none";
+  moves.forEach((move) => {
+    move.style.display = "flex";
+  });
 });
 
 playerPoint.textContent = playerPointValue;
