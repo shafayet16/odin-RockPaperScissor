@@ -73,6 +73,12 @@ i {
     position: relative;
     left: 6px;
   }
+  button:hover {
+    background: #000000;
+    color: #add8e6;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1),
+      0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 1);
+  }
 }
 .hidden {
   display: none;
