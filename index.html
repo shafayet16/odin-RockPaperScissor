@@ -14,8 +14,8 @@
   </head>
   <body>
     <nav>
-      <p id="playa">Player: <span></span></p>
-      <p id="comp">Computer: <span></span></p>
+      <p id="playa">Player: <span id="playa-point"></span></p>
+      <p id="comp">Computer: <span id="comp-point"></span></p>
     </nav>
     <div id="description">
       <h1>Rock Paper Scissors</h1>
@@ -28,11 +28,11 @@
           class="fa-regular fa-hand-back-fist"
           style="color: #b197fc"
         ></i>
-        <button>Rock</button>
+        <button id="rock">Rock</button>
       </div>
       <div class="moves">
         <i id="Paper" class="fa-regular fa-hand" style="color: #b197fc"></i>
-        <button>Paper</button>
+        <button id="paper">Paper</button>
       </div>
       <div class="moves">
         <i
@@ -40,10 +40,11 @@
           class="fa-regular fa-hand-scissors"
           style="color: #b197fc"
         ></i>
-        <button>Scissor</button>
+        <button id="scissor">Scissor</button>
       </div>
       <div class="aftermath">
-        <h3>Result: <span></span></h3>
+        <h3>Computer Chose <span id="compChoice"></span></h3>
+        <h3>You <span id="result"></span></h3>
         <button>Play Again</button>
       </div>
     </div>
