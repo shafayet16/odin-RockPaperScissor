@@ -17,18 +17,21 @@ nav {
   width: 100%;
   padding: 10px 0;
   color: white;
-  height: 20px;
+  height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertically align items in nav */
+  align-items: center;
+  flex-direction: column;
 }
 
 #playa {
-  padding-left: 1rem; /* Use padding instead of position for responsiveness */
+  padding-left: 1rem;
+  padding: 2px;
 }
 
 #comp {
-  padding-right: 1rem; /* Use padding instead of position for responsiveness */
+  padding-right: 1rem;
+  padding: 2px;
 }
 
 #description {
@@ -77,53 +80,40 @@ i {
   cursor: pointer;
 }
 
-/* Responsive adjustments */
-
 @media (max-width: 768px) {
   .container {
-    width: 90vw; /* Increase width on smaller screens */
-    height: 80vh; /* Increase height for better spacing */
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    top: 3em; /* Adjust top position */
+    width: 90vw;
+    height: 80vh;
+    flex-direction: column;
+    top: 3em;
   }
 
   .moves {
-    width: 80%; /* Increase width for better spacing */
-    height: auto; /* Adjust height based on content */
-    margin: 10px auto; /* Add margin for spacing */
+    width: 80%;
+    height: auto;
+    margin: 10px auto;
   }
 
   i {
-    font-size: 2.5em; /* Slightly reduce icon size on smaller screens */
+    font-size: 2.5em;
   }
 
   .moves button {
-    font-size: 1.2em; /* Slightly reduce button font size */
-    padding: 8px 16px; /* Slightly reduce button padding */
+    font-size: 1.2em;
+    padding: 8px 16px;
   }
 
   #description {
-    top: 1em; /* Adjust description position */
-  }
-
-  nav {
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 0;
-  }
-  #playa,
-  #comp {
-    padding: 2px;
+    top: 1em;
   }
 }
 
 @media (max-width: 480px) {
   i {
-    font-size: 2em; /* Further reduce icon size on very small screens */
+    font-size: 2em;
   }
 
   .moves button {
-    font-size: 1em; /* Further reduce button font size */
+    font-size: 1em;
   }
 }
