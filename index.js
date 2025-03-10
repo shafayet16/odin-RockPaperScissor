@@ -5,15 +5,19 @@ let computerPointValue = 0;
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissor = document.getElementById("scissor");
-let CompSpan = document.getElementById("compChoice");
+let CompSpan = document.querySelector(".aftermath span"); //select the span inside the aftermath div.
 let resultDisplay = document.getElementById("result");
 let playAgainButton = document.querySelector(".aftermath button");
 let playerChoice = "";
 const aftermath = document.querySelector(".aftermath");
-function playGame(computer, player) {
-  const choice = ["rock", "paper", "scissor"];
+const choice = ["rock", "paper", "scissor"];
+
+function getComputerChoice() {
   const randomNum = Math.floor(Math.random() * 3);
-  const computer = choice[randomNum];
+  return choice[randomNum];
+}
+
+function playGame(computer, player) {
   CompSpan.textContent = computer;
   if (player === computer) {
     resultDisplay.textContent = "tied!";
@@ -25,5 +29,32 @@ function playGame(computer, player) {
     resultDisplay.textContent = "Win!";
     playerPointValue++;
     playerPoint.textContent = playerPointValue;
+  } else {
+    resultDisplay.textContent = "Lose!";
+    computerPointValue++;
+    computerPoint.textContent = computerPointValue;
   }
+  aftermath.style.display = "flex";
 }
+
+rock.addEventListener("click", function () {
+  playerChoice = "rock";
+  playGame(getComputerChoice(), playerChoice);
+});
+
+paper.addEventListener("click", function () {
+  playerChoice = "paper";
+  playGame(getComputerChoice(), playerChoice);
+});
+
+scissor.addEventListener("click", function () {
+  playerChoice = "scissor";
+  playGame(getComputerChoice(), playerChoice);
+});
+
+playAgainButton.addEventListener("click", function () {
+  aftermath.style.display = "none";
+});
+
+playerPoint.textContent = playerPointValue;
+computerPoint.textContent = computerPointValue;
